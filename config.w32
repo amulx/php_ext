@@ -1,0 +1,7 @@
+ARG_ENABLE('amu', 'amu support', 'no');
+
+if (PHP_AMU != 'no') {
+	AC_DEFINE('HAVE_AMU', 1, 'amu support enabled');
+
+	EXTENSION('amu', 'amu.c', null, '/DZEND_ENABLE_STATIC_TSRMLS_CACHE=1');
+}
